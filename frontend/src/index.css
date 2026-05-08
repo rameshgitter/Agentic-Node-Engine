@@ -1,0 +1,157 @@
+:root {
+  --bg-color: #f8fafc;
+  --node-bg: #ffffff;
+  --node-border: #e2e8f0;
+  --node-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --node-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --handle-color: #6366f1;
+  --handle-border: #ffffff;
+  
+  /* Additional Accents */
+  --accent-input: #3b82f6;   /* Blue */
+  --accent-output: #ef4444;  /* Red */
+  --accent-llm: #10b981;     /* Green */
+  --accent-text: #8b5cf6;    /* Purple */
+  --accent-math: #f59e0b;    /* Amber */
+  --accent-api: #ec4899;     /* Pink */
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Node Styles */
+.vs-node {
+  background: var(--node-bg);
+  border: 1px solid var(--node-border);
+  border-radius: 12px;
+  box-shadow: var(--node-shadow);
+  padding: 12px;
+  min-width: 200px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.vs-node:hover {
+  box-shadow: var(--node-shadow-hover);
+  border-color: var(--primary);
+}
+
+.vs-node-header {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--node-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vs-node-body {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Base Form Inputs */
+.vs-input, .vs-select {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--node-border);
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--text-main);
+  background-color: #f9fafb;
+  transition: border-color 0.15s ease-in-out;
+  outline: none;
+}
+
+.vs-input:focus, .vs-select:focus {
+  border-color: var(--primary);
+  background-color: #fff;
+}
+
+.vs-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* React Flow Handle Overrides */
+.react-flow__handle {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: var(--handle-color) !important;
+  border: 2px solid var(--handle-border) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  transition: transform 0.1s ease;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.2);
+}
+
+/* Toolbar */
+.toolbar-container {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  border: 1px solid var(--node-border);
+}
+
+/* Submit Button Override */
+button[type="submit"] {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-size: 14px;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+button[type="submit"]:active {
+  transform: translateY(1px);
+}
+
